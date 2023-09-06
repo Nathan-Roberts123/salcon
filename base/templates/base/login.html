@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-box">
+                <span>Email</span>
+                <input type="email" name="email">
+            </div>
+
+            <div class="input-box">
+                <span>Password</span>
+                <input type="password" name="password">
+            </div>
+
+            <button type="submit">Login</button>
+
+            <div class="sign-up-msg">
+                <span>Don't have an account. <a href="{% url 'register-form' %}">Sign up</a></span>
+            </div>
+            
+
+        </form>
+
+        <!-- 
+        <div class="separator">
+            <hr>
+            <span>or register with</span>
+            <hr>
+        </div>
+
+        <div class="register-options">
+            <button class="google">google</button>
+            <button class="facebook">facebook</button>
+        </div>
+    -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="input-box">
+                <span>First name</span>
+                {{ form.first_name }}
+            </div>
+
+            <div class="input-box">
+                <span>Last name</span>
+                {{ form.last_name }}
+            </div>
+
+            <div class="input-box">
+                <span>Email address</span>
+                {{ form.email }}
+            </div>
+
+            <div class="password-box">
+                <div class="input-box">
+                    <span>Password</span>
+                    {{ form.password1 }}
+                </div>
+                <div class="input-box">
+                    <span>Confirm password</span>
+                    {{ form.password2 }}
+                </div>
+            </div>
+
+            <!-- 
+            <div class="tlc">
+                <input type="checkbox">
+                <span>
+                    I accept the <a href="#">terms</a> and <a href="#">policy privacy</a>
+                </span>
+            </div>
+        -->
+        
+            <button type="submit">Register</button>
+
+        </form>
+
+        <div class="sign-up-msg">
+            <span>Already have an account. <a href="{% url 'login' %}">Log in</a></span>
+        </div>
+
+        <!-- 
+        <div class="separator">
+            <hr>
+            <span>or register with</span>
+            <hr>
+        </div>
+
+        <div class="register-options">
+            <button class="google">google</button>
+            <button class="facebook">facebook</button>
+        </div>
+    -->
+    </div>
+</body>
+</html>

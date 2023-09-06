@@ -1,0 +1,49 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="main-checkout">
+    <div class="check-out-bar">
+        <span class="shopping-label">Shopping cart ({{cart_total}} items)</span>
+        <div>
+            <a href="{% url 'home-page' %}" class="back-btn">back to shopping</a>
+            <a href="{% url 'payment' %}" class="checkout-btn">checkout</a>
+        </div>
+    </div>
+    <div class="table-bar">
+        <span>Name</span>
+        <div>
+            <span class="quantity-label">Quantity</span>
+            <span class="price-label">Price</span>
+        </div>
+    </div>
+    
+    <div class="checkout-products-box">
+        {% for order in cart_orders %}
+        <div>
+            <div class="cart-product">
+                <div class="checkout-img-name">
+                    <img class="checkout_product_image" src="{{order.product.image.url}}">
+                    <span class="checkout_product_name">{{order.product.name}}</span>
+                </div>
+                <div>
+                    <div class="quantity-controller">
+                        <button class="decrease-btn cart-btn" data-product="{{order.product.name}}" data-action="remove">-</button>
+                        <span class="quantity">{{order.quantity}}</span>
+                        <button class="increase-btn cart-btn" data-product="{{order.product.name}}" data-action="add">+</button>
+                    </div>
+                    <span class="product-checkout-price">${{order.Total}}</span>
+                </div>
+            </div>
+            <hr class="line">
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="bottom-checkout">
+        <span>Total</span>
+        <span>{{cart_total}}</span>
+        <span>${{total_price}}</span>
+    </div>
+</div>
+{% endblock %}
+

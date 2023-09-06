@@ -1,0 +1,98 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="form-address-body">
+    <div class="form-address-container">
+        <h1>Add delivery address</h1>
+        {% if user.is_authenticated %}
+        <form class="addressForm" method="POST">
+            {% csrf_token %}
+            <div class="form-container">
+                <div class="input-box">
+                    <span>Name</span>
+                    {{form.first_name}}
+                </div>
+                <div class="input-box">
+                    <span>Surname</span>
+                    {{form.last_name}}
+                </div>
+            </div>
+            <div class="input-box">
+                <span>Country/region</span>
+                {{form.country}}
+            </div>
+            <div class="input-box">
+                <span>Street address</span>
+                {% render_field form.street_address placeholder="Street address" %}
+                {% render_field form.building_type placeholder="House, Flat etc" %}
+            </div>
+            <div class="input-box">
+                <span>City</span>
+                {{form.city}}
+            </div>
+            <div class="input-box">
+                <span>State/Province/Region</span>
+                {{form.state}}
+            </div>
+            <div class="input-box">
+                <span>Zip code</span>
+                {{form.zip_code}}
+            </div>
+            <div class="input-box">
+                <span>Phone number</span>
+                {{form.phone_number}}
+            </div>
+            <button type="submit">Add adress</button>
+        </form>
+        {% else %}
+
+        <div>
+            <div class="form-container">
+                <div class="input-box">
+                    <span>Name</span>
+                    <input type="text" class="form-info" id="first_name">
+                </div>
+                <div class="input-box">
+                    <span>Surname</span>
+                    <input type="text" class="form-info" id="last_name">
+                </div>
+            </div>
+            <div class="input-box">
+                <span>Country/region</span>
+                <select class="form-info" id="country">
+                    {% for country in countries %}
+                    <option>{{country}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input-box">
+                <span>Street address</span>
+                <input type="text" placeholder="street address" class="form-info" id="street_address">
+                <input type="text" placeholder="House, Flat etc" class="form-info" id="house">
+            </div>
+            <div class="input-box">
+                <span>City</span>
+                <input type="text" class="form-info" id="city">
+            </div>
+            <div class="input-box">
+                <span>State/Province/Region</span>
+                <input type="text" class="form-info" id="state">
+            </div>
+            <div class="input-box">
+                <span>Zip code</span>
+                <input type="text" class="form-info" id="zip_code">
+            </div>
+            <div class="input-box">
+                <span>Phone number</span>
+                <input type="text" class="form-info" id="phone_number">
+            </div>
+
+            <button class="form-btn" onclick="addAddress()">Add adress</button>
+        </div>
+
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %}
+
+{%  block content %}
+<div class="product-grid">
+
+    {% for product in products %}
+    <div class="product">
+        <img class="product-image" src="{{product.image.url}}" width="300px">
+        <span class="product-name">{{product.name}}</span>
+        <div>
+            <span class="product-price">${{product.price}}</span>
+            <button class="cart-btn" data-product="{{product.name}}" data-action="create">
+                <i class="fa-solid fa-cart-shopping cart-btn"></i>
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}

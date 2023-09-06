@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(156, 182, 182);
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    min-width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.input-box {
+    
+}
+
+.input-box span {
+    display: block;
+    margin-bottom: 9px;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(100, 100, 100);
+}
+
+.input-box input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px groove;
+    border-radius: 5px;
+    border-color: rgb(148, 148, 148);
+    box-shadow: 0 1px 2px inset rgb(121, 121, 121);
+    outline: none;
+    padding-left: 10px;
+}
+
+.password-box {
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+    column-gap: 15px;
+}
+
+.password-box > * {
+    flex: 1 1;
+}
+
+.tlc {
+    margin-bottom: 15px;
+}
+
+.tlc span a {
+    text-decoration: none;
+}
+
+form button {
+    width: 100%;
+    height: 45px;
+    background-color: rgb(89, 89, 170);
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.separator hr {
+    height: 1px;
+    width: 120%;
+}
+
+.separator span {
+    width: 100%;
+    text-align: center;
+}
+
+.separator > * {
+    flex: 1 1 1;
+}
+
+.register-options {
+    display: flex;
+    margin-top: 20px;
+    column-gap: 10px;
+}
+
+.register-options button {
+    all: unset;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+
+.register-options .google {
+    border-color: rgb(255, 48, 48); 
+    color: rgb(255, 48, 48); 
+}
+
+.register-options .facebook {
+    border-color: rgb(48, 103, 255); 
+    color: rgb(48, 103, 255); 
+}
+
+.sign-up-msg {
+    text-align: center;
+}
+
+.sign-up-msg a {
+    text-decoration: none;
+}
+
+
